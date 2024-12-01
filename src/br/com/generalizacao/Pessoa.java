@@ -1,5 +1,7 @@
 package br.com.generalizacao;
 
+import java.util.Objects;
+
 import br.com.banco.Cidade;
 
 public class Pessoa {
@@ -22,6 +24,21 @@ public class Pessoa {
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", cidade=" + cidade + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(cidade, nome);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return Objects.equals(cidade, other.cidade) && Objects.equals(nome, other.nome);
 	}
 	
 	

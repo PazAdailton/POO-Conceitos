@@ -7,11 +7,19 @@ public class Cliente {
 	private String cpf;
 	private Cidade cidade;
 	
+	
+	
+	public Cliente(String nome) {
+		setNome(nome);
+	}
+	
 	private static int qtdCliente=0;
 	
 	public Cliente() {
 		qtdCliente ++;
 	}
+	
+	
 	public static int getQtdCliente() {
 		
 		
